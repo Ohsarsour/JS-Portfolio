@@ -1,4 +1,4 @@
-$primary-color: #252424;
+$primary-color: #fff;
 $secondary-color: #eece1a;
 $show-home-image: true;
 $home-image: url(../img/background.jpg);
@@ -10,7 +10,6 @@ $background-opacity: 0.9;
 @mixin background {
   @if $show-home-image {
     &#bg-img {
-      background: $home-image;
       background-attachment: fixed;
       background-size: cover;
 
@@ -27,6 +26,16 @@ $background-opacity: 0.9;
         background: rgba($primary-color, $background-opacity);
       }
     }
+  }
+}
+
+// set text color depending on the background colors
+
+@function set-text-color($color) {
+  @if (lightness($color) >40) {
+    @return #000;
+  } @else {
+    @return #fff;
   }
 }
 
