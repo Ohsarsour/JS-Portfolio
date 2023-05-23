@@ -31,3 +31,21 @@ function toggleMenu() {
     showMenu = false
   }
 }
+
+// typer effect
+var text =
+  'I am an aspiring Web Developer & learner. In my free time, I enjoy learning new development languages and frameworks.'
+
+var typewriter = document.getElementById('typewriter')
+
+var i = 0
+var speed = 50
+
+function typeEffect() {
+  if (i < text.length) {
+    typewriter.innerHTML += text.charAt(i)
+    i++
+    setTimeout(typeEffect, speed)
+  }
+}
+window.onload = typeEffect

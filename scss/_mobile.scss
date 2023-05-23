@@ -1,8 +1,46 @@
 // Widescreens
 @include mediaXl {
 }
-// Desktop and laptop
+// Desktops and Laptops
 @include mediaLg {
+  main {
+    align-items: center;
+    text-align: center;
+
+    .lg-heading {
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+    ol,
+    li {
+      // list-style-type: none;
+      list-style-position: inside;
+      text-align: left;
+      margin-bottom: 1rem;
+      padding: 0 0.5rem;
+    }
+  }
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .about-info {
+    grid-template-areas:
+      'bioimage'
+      'bio'
+      'exp-h'
+      'job1'
+      'job2'
+      'job3'
+      'edu-h'
+      'edu-b'
+      'skill-h'
+      'skill-1'
+      'skill-2';
+
+    grid-template-columns: 1fr;
+    padding: 0rem 2rem;
+    font-size: 1rem;
+  }
 }
 // Tablets and small laptops
 @include mediaMd {
